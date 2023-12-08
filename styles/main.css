@@ -127,7 +127,6 @@ main {
     height: 100px;
     background-color: #fff;
     border: 2px solid #ddd;
-    border-radius: 50%;
     margin-bottom: 10px;
 }
 
@@ -180,7 +179,6 @@ h2 {
     width: 80px; 
     height: 80px; 
     background-color: #ddd;
-    border-radius: 50%;
     margin-right: 10px;
 }
 
@@ -277,6 +275,48 @@ main {
     }
 }
 
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .selected-champion {
+        padding: 5px;
+    }
+
+    .selected-champion .image {
+        width: 80px;
+        height: 80px;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .add-to-team-btn,
+    .Kick-from-team-btn {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+
+    .search-champion {
+        padding: 5px;
+    }
+
+    .search-champion .image {
+        width: 60px;
+        height: 60px;
+    }
+
+    main{
+        padding: 0;
+    
+    }
+    .start-view{
+        padding: 10px;
+        
+    
+    }
+    
+}
 
 /*______________________*/
 .hidden{
