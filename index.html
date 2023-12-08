@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/start-view.css">
+    <link rel="stylesheet" href="/styles/my-team-view.css">
+    <script type="module" src="/src/script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Poké manager</h1>
+            <div class="header-div">
+                <img src="img/Pasted Graphic.png" alt="" id="pokemon-icon2">
+            </div>
+        </div>
+
+        <nav class="nav-meny">
+            <button class="nav-btn" id="find-champsBtn">Find champions</button>
+            <button class="nav-btn" id="my-teamBtn">My team</button>       
+        </nav>
+    </header>
+
+    <main>
+        <section class="start-view">
+            <section class="find-champs-section">
+                <div id="find-champs" class="search-container">
+                    <label for="search">Find Pokémon:</label>
+                    <div class="search-wrapper">
+                        <input name="search" type="text" class="search-input" placeholder="Search...">
+                        <button id="SearchBtn" class="search-button">Search
+                        </button>
+                    </div>
+                </div>
+                <div class="search-results">
+                    <div class="search-champion">
+                        <div class="image"></div>
+                        <div>
+                            <h2> Bulbasaur </h2>
+                            <button class="add-to-team-btn"> Add champion to team </button>
+                        </div>
+                    </div>
+                    <div class="search-champion">
+                        <div class="image"></div>
+                        <div>
+                            <h2> Ivysaur </h2>
+                            <button class="add-to-team-btn"> Add champion to team </button>
+                        </div>
+                    </div>
+                    <div class="search-champion">
+                        <div class="image"></div>
+                        <div>
+                            <h2> Venusaur </h2>
+                            <button class="add-to-team-btn"> Add champion to team </button>
+                        </div>
+                    </div>
+                   
+                    <div class="search-champion">
+                        <div class="image"></div>
+                        <div>
+                            <h2> Mega Venusaur </h2>
+                            <button class="add-to-team-btn"> Add champion to team </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="selected-pokemons">
+                <div class="selected-champion">
+                    <div class="image"></div>
+                    <div>
+                        <h2> Bulbasaur </h2>
+                        <button class="Kick-from-team-btn"> Kick from team </button>
+                    </div>
+                </div>
+                <div class="selected-champion">
+                    <div class="image"></div>
+                    <div>
+                        <h2> Ivysaur </h2>
+                        <button class="Kick-from-team-btn"> Kick from team </button>
+                    </div>
+                </div>
+                <div class="selected-champion">
+                    <div class="image"></div>
+                    <div>
+                        <h2> Venusaur </h2>
+                        <button class="Kick-from-team-btn"> Kick from team </button>
+                    </div>
+                </div>
+                <div class="selected-champion">
+                    <div class="image"></div>
+                    <div>
+                        <h2> Mega Venusaur </h2>
+                        <button class="Kick-from-team-btn">Kick from team </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="my-team-view hidden">
+            <div class="row-container">
+                <div class="team-container"> 
+                    <div class="selected-champion">
+                        <div class="image"></div>
+                        <h2> Mega Venusaur </h2>
+                    </div><!-- Första div i raden -->
+                    <!-- Innehåll för första diven här -->
+                    
+                </div>
+
+                <div class="team-container"> <!-- Andra div i raden -->
+                    <!-- Innehåll för andra diven här -->
+                    <div class="selected-champion">
+                        <div class="image"></div>
+                        <h2>Charizard</h2>
+                    </div>
+                </div>
+
+                <div class="team-container"> <!-- Tredje div i raden -->
+                    <!-- Innehåll för tredje diven här -->
+                    <div class="selected-champion">
+                        <div class="image"></div>
+                        <h2>Pikachu</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-container"> <!-- Div under raden -->
+                <!-- Innehåll för den enskilda diven här -->
+                <div class="selected-champion">
+                    <div class="image"></div>
+                    <h2>Jolteon</h2>
+                </div>
+            </div>
+
+        </section>
+    
+    </main>
+
+</body>
+
+</html>

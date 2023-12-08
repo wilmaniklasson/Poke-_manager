@@ -1,0 +1,14 @@
+
+  {
+    "name": "poke-manager",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Poké manager",
+    "keywords": [
+      "modules",
+      "functions"
+    ],
+    "author": "Wilma Niklasson",
+    "license": "MIT"
+  }
+  
