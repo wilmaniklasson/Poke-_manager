@@ -231,22 +231,25 @@ label {
 }
 
 .search-results {
+    padding: 1rem;
+    border: #fff solid 2px;  
     max-height: 350px; 
     overflow-y: auto;
     overflow-x: hidden; 
 }
 .find-champs-section {
-    
+    padding: 1em;
     background-color:  #4a4a4a62;
-    
+    border-radius: 1rem;
      
 }
 
 .selected-pokemons {
-    
+    padding: 1rem;
     background-color:  #4a4a4a62;
-    
+    border-radius: 1rem;
 }
+
 
 /*____________________________________*/
 /*ta bort när vi är klara med designen*/
