@@ -1,11 +1,19 @@
 
+import { createSearchPokemonCard, createEmptySearchModal } from './dom.js';
+
+
 const pokemonApiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';
 
-// Funktion för att hämta och spara Pokemon-namnen
+//klickhändelse som hanterar sökningen
+const searchButton = document.querySelector('#searchBtn');
+searchButton.addEventListener('click', handleSearch);
+
+// Funktion för att hämta och spara Pokémon-namn i local storage
 function fetchAndSavePokemonNames() {
   fetch(pokemonApiUrl)
     .then(response => response.json())
     .then(data => {
+      // Extrahera Pokémon-namnen från API-responsen och spara i local storage
       const pokemonNames = data.results.map(pokemon => pokemon.name);
       localStorage.setItem('pokemonNames', JSON.stringify(pokemonNames));
       console.log('Pokemon names saved in local storage:');
@@ -13,65 +21,93 @@ function fetchAndSavePokemonNames() {
     .catch(error => console.error('Error fetching Pokemon data:', error));
 }
 
+// Hämta Pokémon-namn från local storage
 const pokemonNames = localStorage.getItem('pokemonNames');
 
-
-//kontrollerar om det finns Pokemon namn i local storage, om  det inte finns hämtas alla Pokemon namn från API och sparas i local storage
+// Kontrollera om Pokémon-namn finns i local storage, annars hämta och spara dem
 if (pokemonNames) {
   console.log('Pokemon names found in local storage:');
 } else {
   console.log('No Pokemon names found in local storage.');
-    // Anropa funktionen
-    fetchAndSavePokemonNames();
+  // Anropa funktionen för att hämta och spara Pokémon-namn
+  fetchAndSavePokemonNames();
 }
 
 
-//när användaren skrivit in ett namn i sökfältet och klickar på sökknappen tas värdet från sökfältet och sparas i searchInput
-const searchButton = document.querySelector('#searchBtn');
 
-searchButton.addEventListener('click', function() {
+/*_______________________________________________________________*/
 
+let pokemonDetailsArray = [];
+
+// Funktion för sökningen
+async function handleSearch() {
+    // Hämta söktermen från inputfältet och omvandla till gemener
     const searchInput = document.querySelector('#searchInput').value.toLowerCase();
+
+    // Kontrollera om sökfältet är tomt
+    if (searchInput.trim() === '') {
+        // Visa modalen om sökfältet är tomt
+        createEmptySearchModal();
+        return;
+    }
+
+    // Dela upp söktermen i en array av strängar
+    const searchTerms = searchInput.split(' ');
+
+    // Hämta Pokémon-namn från local storage eller använd en tom array om det inte finns några namn
     const pokemonNames = JSON.parse(localStorage.getItem('pokemonNames')) || [];
 
-  //hämtar alla Pokemon namn från local storage och filtrerar ut de som matchar searchInput och sparar i matchingPokemon
-    const matchingPokemon = pokemonNames.filter(name => name.includes(searchInput));
-  
-    if (matchingPokemon.length > 0) {
-        // väljer att ha en forEach loop för att kunna hämta alla Pokemon som matchar searchInput
-        matchingPokemon.forEach(pokemonName => {
-            //för varje Pokemon som matchar searchInput körs getPokemonDetails funktionen
-          getPokemonDetails(pokemonName);
-        });
-      } else {
-        console.log('No matching Pokemon found.');
-      }
+    // Filtrera Pokémon-namn baserat på söktermerna för att kunna söka på Exempel: "MaN" hittar "Charmander", "Mankey" och "Omanyte".
+    const matchingPokemon = [];
+    pokemonNames.forEach(name => {
+        if (searchTerms.some(term => name.includes(term))) {
+            matchingPokemon.push(name);
+        }
     });
 
+    // Om matchande Pokémon finns, hämta deras detaljer och skapa dom element
+    if (matchingPokemon.length > 0) {
+        try {
+            // väntar in alla pokemonDetails för att samtidigt lägga till dessa i arrayen
+            pokemonDetailsArray = await Promise.all(
+                matchingPokemon.map(pokemonName => getPokemonDetails(pokemonName))
+            );
 
-    /*___________________________________________________________________*/
+            // anroppar funktionen som skapar dom elementen
+            createSearchPokemonCard(pokemonDetailsArray);
+        } catch (error) {
+            console.error('Error fetching Pokemon details:', error);
+        }
+    } else {
+        console.log('No matching Pokemon found.');
+    }
+}
 
+/*_______________________________________________________________*/
 
+// Funktion för att hämta detaljer om en Pokémon från API
+async function getPokemonDetails(pokemonName) {
+  // Skapa URL för att hämta detaljer om en specifik Pokémon
+  const pokemonDetailsUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
 
-  //här körs getPokemonDetails funktionen som hämtar namn, bild och abilities för varje Pokemon som matchar searchInput
-  function getPokemonDetails(pokemonName) {
-   
-    const pokemonDetailsUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
-  
-    fetch(pokemonDetailsUrl)
-      .then(response => response.json())
-      .then(data => {
-        const pokemonDetails = {
-          name: data.name,
-          image: data.sprites.front_default,
-          //sparar abilities i en array då dessa oftast är flera
-          abilities: data.abilities.map(ability => ability.ability.name),
-        };
-  
-        console.log('Pokemon Details:', pokemonDetails);
-        
-      })
-      .catch(error => console.error(`Error fetching details for ${pokemonName}:`, error));
+  try {
+    const response = await fetch(pokemonDetailsUrl);
+    const data = await response.json();
+
+    // skapar objekt med de detaljer som behövs
+    const pokemonDetails = {
+      name: data.name,
+      image: data.sprites.front_default,
+      abilities: data.abilities.map(ability => ability.ability.name),
+    };
+
+    return pokemonDetails;
+  } catch (error) {
+    // Hantera eventuella fel vid hämtning av Pokémon-detaljer
+    console.error(`Error fetching details for ${pokemonName}:`, error);
+    return { error: true, message: 'Error fetching Pokemon details' };
   }
-  
+}
 
+// Exportera arrayen inehållande objekt med pokemonDetails
+export { pokemonDetailsArray };
