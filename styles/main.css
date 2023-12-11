@@ -8,6 +8,7 @@
 }
 
 body {
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     background-color: #fff1bb;
     padding: 0;
@@ -44,6 +45,7 @@ header {
 }
 
 
+
 h2 {
     font-size: 1.2rem;
     margin: 10px 0;
@@ -76,7 +78,6 @@ nav {
 
 
 main {
-   border: #fff solid 2px;
     height: auto;
     
 }
@@ -92,9 +93,7 @@ main {
 .selected-pokemons {
     border: #fff solid 2px; 
 }
-main {
-    border: #fff solid 2px;  
- }
+
 
 /*____________________________________*/
 
