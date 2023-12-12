@@ -4,39 +4,24 @@
     gap: 1rem;
     padding: 20px;
     margin: 0 auto;
-    height: 100vh;
-
-
+    height: auto;
 }
 
 
-.selected-champion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: #f2f2f2;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
 
-.selected-champion:hover {
-    transform: scale(1.05);
-}
+
 
 .selected-champion img {
-    width: 200px;
-    height: 150px;
-    background-color: #fff;
-    border: 2px solid #ddd;
-    margin-bottom: 10px;
+    position: relative;
+    top: -40px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    
 }
 
 h2 {
     font-size: 1.2rem;
-    margin: 10px 0;
     color: #333;
 }
 
@@ -51,26 +36,14 @@ ul {
     padding: 0;
     margin: 0;
 }
-.Kick-from-team-btn {
-    padding: 5px 10px;
-    font-size: 0.85rem;
-    background-color: #109397;
-    color: #fff; 
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
 
-
-.Kick-from-team-btn:hover {
-    background-color: #0d787b;
-    transform: scale(1.1);
-    cursor: pointer;
-}
 
 
 .team{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: #fff solid 2px; 
     border-radius: 1em;
     padding: 1em;
@@ -78,64 +51,63 @@ ul {
 
 }
 
-.reserv{
+.reserv {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
     border: #fff solid 2px; 
     border-radius: 1em;
     padding: 1em;
     height: 60%;
+    margin-top: 1rem;
     overflow-y: auto;
     overflow-x: hidden; 
 }
 
 
 
-#ramstil{
-    border: #fff solid 2px;
-    margin-bottom: 10px;
-    padding: 4px;
-    border-radius: 5px;
-    height: 5rem;
-}
-
-
-
-.add-to-team-btn{
+.add-to-team-btn {
     padding: 5px 10px;
     font-size: 0.85rem;
-    background-color: #109397; 
-    color: #fff; 
+    margin-bottom: 3px;
+    background-color: #109397;
+    color: #fff;
     border: none;
     border-radius: 5px;
-    margin-bottom: 1em;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.add-to-team-btn:hover{
-    background-color: #0d7d81;
-    transform: scale(1.1);
-    cursor: pointer;
+.add-to-team-btn:hover {
+    transform: scale(1.2);
 }
 
 
 .search-champion{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-top: 10px;
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
-    height: 5rem;
+    height: 9rem;
+    
+    
 }
 .search-champion img {
     width: 100px; 
     height: 100px; 
-    margin-right: 10px;
+    position: relative;
+    
+    
 }
 .infoDiv{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    align-items: flex-start;
+   
     flex: 1;
 }
 .search-champion h2 {
@@ -143,7 +115,7 @@ ul {
 }
 
 
-
+/*__________________________________________*/
 .search-container {
     padding: 15px;
 }
@@ -184,18 +156,30 @@ label {
 }
 
 .search-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
     padding: 1rem;
     border: #fff solid 2px;  
     height: 80%;
     border-radius: 1em;
     overflow-y: auto;
     overflow-x: hidden; 
+    max-height: 700px;
 }
+
+
+/*__________________________________________*/
+
+
+
 .find-champs-section {
     padding: 1em;
     background-color:   #acaaaa62;
     border-radius: 1rem;
     height: 100vh;
+    
      
 }
 
@@ -244,8 +228,14 @@ label {
 }
 
 
-
-
+@media (max-width: 766px) {
+    .search-results {
+        height: 78%;
+    }
+    .find-champs-section {
+        height: 60vh;  
+    }
+}
 
 
 /* Media query för att anpassa för större skärmar */
@@ -271,11 +261,7 @@ label {
         font-size: 1rem;
     }
 
-    .add-to-team-btn,
-    .Kick-from-team-btn {
-        padding: 5px 8px;
-        font-size: 0.8rem;
-    }
+    
 
     .search-champion {
         padding: 5px;
@@ -283,41 +269,16 @@ label {
 
    
 
-    main{
-        padding: 0;
-    
-    }
+   
     .start-view{
         padding: 10px;
         
     
     }
+
+.selected-pokemons {
+    padding: 0.5rem;
+}
     
 }
 
-/*______________________*/
-.hidden{
-    visibility: hidden;
-    position: absolute;
-    width: 0;
-    height: 0;
-}
-
-
-
-/*färger*/
-/*
-#ecb223	= gul
-#e5bb81	= bege
-#2b0d7a	= mörkblå
-#a87358	= brun
-#b3aac3	= ljuslila
-#315759 = mörkgrön
-
-#ff0000 = röd
-#cc0000	= mörkröd
-#3b4cca	= blå
-#ffde00	= gul
-#b3a125 = brun
-
-*/

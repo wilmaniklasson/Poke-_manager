@@ -1,19 +1,17 @@
-document.getElementById("find-champsBtn").addEventListener("click", function () {
-    showView("start-view");
+
+const myTeamView = document.querySelector(".my-team-view");
+window.onload = function () {
+    myTeamView.classList.add('hidden');
+};
+
+const startView = document.querySelector(".start-view");
+const findChampsBtn = document.querySelector("#find-champsBtn");
+findChampsBtn.addEventListener("click", () => {
+    startView.classList.remove('hidden');
+    myTeamView.classList.add('hidden');
 });
-
-document.getElementById("my-teamBtn").addEventListener("click", function () {
-    showView("my-team-view");
+const myTeamBt = document.querySelector("#my-teamBtn")
+myTeamBt.addEventListener("click", () => {
+    startView.classList.add('hidden');
+    myTeamView.classList.remove('hidden');
 });
-
-function showView(viewId) {
-    // Dölj alla vyer först
-    var views = document.querySelectorAll('.start-view, .my-team-view');
-    views.forEach(function (view) {
-        view.classList.add('hidden');
-    });
-
-    // Visa den valda vyn
-    var selectedView = document.querySelector('.' + viewId);
-    selectedView.classList.remove('hidden');
-}

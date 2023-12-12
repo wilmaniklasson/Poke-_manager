@@ -26,7 +26,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main-container">
         <section class="start-view">
             <section class="find-champs-section">
                 <div id="find-champs" class="search-container">
@@ -47,9 +47,7 @@
                 <h2 class="text">Selected Pokémons</h2>
                 <div class="team">
                     <ul id="valdaPokemonsList">
-                        <li id="ramstil"></li>
-                        <li id="ramstil"></li>
-                        <li id="ramstil"></li>
+                    
                     </ul>
                 </div>
                 
@@ -59,43 +57,23 @@
                 </div>
             </section>
         </section>
-        <section class="my-team-view hidden">
-            <div class="row-container">
-                <div class="team-container"> 
-                    <div class="selected-champion">
-                        <div class="image"></div>
-                        <h2> Mega Venusaur </h2>
-                    </div><!-- Första div i raden -->
-                    <!-- Innehåll för första diven här -->
-                    
+        <section class="my-team-view">
+        
+            <section class="selected-team-members">
+                <h2 class="text">Selected Team Members</h2>
+                <div class="team">
+                    <ul id="selectedTeamMembersList">
+                        <!-- Lista med valda medlemmar här -->
+                    </ul>
                 </div>
-
-                <div class="team-container"> <!-- Andra div i raden -->
-                    <!-- Innehåll för andra diven här -->
-                    <div class="selected-champion">
-                        <div class="image"></div>
-                        <h2>Charizard</h2>
-                    </div>
+        
+                <h2 class="text">Reserved Team Members</h2>
+                <div class="reserve">
+                    <ul id="reservedTeamMembersList"></ul>
                 </div>
-
-                <div class="team-container"> <!-- Tredje div i raden -->
-                    <!-- Innehåll för tredje diven här -->
-                    <div class="selected-champion">
-                        <div class="image"></div>
-                        <h2>Pikachu</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="single-container"> <!-- Div under raden -->
-                <!-- Innehåll för den enskilda diven här -->
-                <div class="selected-champion">
-                    <div class="image"></div>
-                    <h2>Jolteon</h2>
-                </div>
-            </div>
-
+            </section>
         </section>
+        
     
     </main>
 

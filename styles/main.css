@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 @font-face {
@@ -7,14 +9,26 @@
     font-style: normal;
 }
 
-body {
-    box-sizing: border-box;
+*{
     font-family: 'Roboto', sans-serif;
-    background-color: #fff1bb;
-    padding: 0;
+    box-sizing: border-box;
+}
+body {
     margin: 0;
-   
-   
+    padding: 0;
+    background-color: #fff1bb;
+}
+
+
+header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ca6f6f;
+    color: #fff;
+    margin: 0; 
 }
 
 header h1 {
@@ -28,21 +42,6 @@ header h1 {
      margin: 0;
 }
 
-header {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    
-    background-color: #ca6f6f;
-    color: #fff;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-}
 
 
 
@@ -76,12 +75,15 @@ nav {
     cursor: pointer;
 }
 
-
-main {
-    height: auto;
-    
-}
-
+.main-container {
+    display: flex;
+    height: 90%;
+    background-color: #fff1bb;
+  }
+  
+  .start-view {
+    flex: 1;
+  }
 /*____________________________________*/
 /*ta bort när jag är klara med designen*/
 
@@ -122,20 +124,13 @@ main {
         font-size: 1rem;
     }
 
-    .add-to-team-btn,
-    .Kick-from-team-btn {
-        padding: 5px 8px;
-        font-size: 0.8rem;
-    }
+   
 
     .search-champion {
         padding: 5px;
     }
 
-    main{
-        padding: 0;
     
-    }
     .start-view{
         padding: 10px;
         
