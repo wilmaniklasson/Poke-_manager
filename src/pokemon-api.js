@@ -45,7 +45,7 @@ async function handleSearch() {
     const searchInput = document.querySelector('#searchInput').value.toLowerCase();
 
     // Kontrollera om sökfältet är tomt
-    if (searchInput.trim() === '') {
+    if (searchInput.length === 0) {
         // Visa modalen om sökfältet är tomt
         createEmptySearchModal();
         return;

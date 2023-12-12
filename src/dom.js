@@ -48,7 +48,7 @@ function createSearchPokemonCard(pokemonDetailsArray) {
         resultList.appendChild(searchChampion);
     });
 
-    // Lägg till ul-listan i sökresultatbehållaren
+
     searchResults.appendChild(resultList);
 }
 
