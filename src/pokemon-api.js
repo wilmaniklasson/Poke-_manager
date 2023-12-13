@@ -1,5 +1,6 @@
 
-import { createSearchPokemonCard, createEmptySearchModal } from './dom.js';
+import { createSearchPokemonCard } from './dom.js';
+import { createEmptySearchModal } from './modal.js';
 
 
 const pokemonApiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';

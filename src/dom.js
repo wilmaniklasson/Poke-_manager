@@ -80,7 +80,7 @@ function createValdaPokemons(listId, pokemonList) {
 
         const imageDiv = document.createElement('div');
         imageDiv.classList.add('selected-champion-img');
-
+        //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
@@ -95,6 +95,7 @@ function createValdaPokemons(listId, pokemonList) {
         nicknameHeader.classList.add('nickname');
 
         const nicknameInput = document.createElement('input');
+        nicknameInput.classList.add('nickname-input');
         nicknameInput.type = 'text';
         nicknameInput.placeholder = 'Enter Nickname';
 
@@ -110,18 +111,20 @@ function createValdaPokemons(listId, pokemonList) {
             }
         });
 
-        const moveUpBtn = document.createElement('button');
-        moveUpBtn.classList.add('move-up-btn');
-        moveUpBtn.textContent = 'Move Up';
-        moveUpBtn.addEventListener('click', function () {
-            movePokemon(pokemon, index, index - 1);
+        const moveBtn = document.createElement('button');
+        moveBtn.classList.add('movebtn');
+        moveBtn.textContent = 'Move';
+        moveBtn.addEventListener('click', function () {
+            move(pokemon);
+            
         });
 
-        const moveDownBtn = document.createElement('button');
-        moveDownBtn.classList.add('move-down-btn');
-        moveDownBtn.textContent = 'Move Down';
-        moveDownBtn.addEventListener('click', function () {
-            movePokemon(pokemon, index, index + 1);
+        const moveToReserveBtn = document.createElement('button');
+        moveToReserveBtn.classList.add('move-to-reserve-btn');
+        moveToReserveBtn.textContent = 'Move to reserve';
+        moveToReserveBtn.addEventListener('click', function () {
+            moveToReserve(pokemon);
+            
         });
 
         const removeFromTeamBtn = document.createElement('button');
@@ -140,18 +143,68 @@ function createValdaPokemons(listId, pokemonList) {
         infoDiv.appendChild(nicknameHeader);
         infoDiv.appendChild(nicknameInput);
         infoDiv.appendChild(setNicknameBtn);
-        infoDiv.appendChild(moveUpBtn);
-        infoDiv.appendChild(moveDownBtn);
+        infoDiv.appendChild(moveBtn);
+        infoDiv.appendChild(moveToReserveBtn);
         infoDiv.appendChild(removeFromTeamBtn);
-
         listItem.appendChild(imageDiv);
         listItem.appendChild(infoDiv);
 
         list.appendChild(listItem);
     });
 }
-function setNickname(pokemon, nickname) {
-    console.log(`Setting nickname "${nickname}" for Pokemon "${pokemon.name}"`);
+
+/*_______________________________________________________________*/
+// Funktioner för att hantera laget
+
+// Funktion för att ge Pokémon ett smeknamn
+function setNickname(pokemon, newNickname) {
+    pokemon.nickname = newNickname;
+}
+
+// Funktion för att ta bort Pokémon från laget
+function removeFromTeam(pokemon) {
+    const index = valdaPokemons.indexOf(pokemon);
+    if (index !== -1) {
+        valdaPokemons.splice(index, 1);
+        updateLists();
+    }
+}
+
+// Funktion för att flytta Pokémon i laget
+function move(pokemon) {
+    if (valdaPokemons.length === 3) {
+        const index = valdaPokemons.indexOf(pokemon);
+        if (index !== -1) {
+            valdaPokemons.splice(index, 1);
+            valdaPokemons.splice(index - 1, 0, pokemon);
+            updateLists();
+        }
+    }
+
+}
+
+// Funktion för att flytta Pokémon till reservlaget
+function moveToReserve(pokemon) {
+    const index = valdaPokemons.indexOf(pokemon);
+    if (index !== -1) {
+        valdaPokemons.splice(index, 1);
+        reservPokemons.push(pokemon);
+        updateLists();
+    }
+}
+
+/*_______________________________________________________________*/
+
+function updateLists() {
+    const valdaPokemonsList = document.getElementById('valdaPokemonsList');
+    const reservPokemonsList = document.getElementById('reservPokemonsList');
+
+    // Återställ listorna
+    valdaPokemonsList.innerHTML = '';
+    reservPokemonsList.innerHTML = '';
+
+    createValdaPokemons('valdaPokemonsList', valdaPokemons);
+    createReservPokemons('reservPokemonsList', reservPokemons);
 }
 
 /*_______________________________________________________________*/
@@ -162,11 +215,11 @@ function createReservPokemons(listId, pokemonList) {
 
     pokemonList.forEach(pokemon => {
         const listItem = document.createElement('li');
-        listItem.classList.add('search-champion');
+        listItem.classList.add('reserv-champion');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('search-champion-img');
-
+        imageDiv.classList.add('reserv-champion-img');
+        //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
@@ -175,7 +228,7 @@ function createReservPokemons(listId, pokemonList) {
 
         const removeFromReserveBtn = document.createElement('button');
         removeFromReserveBtn.classList.add('remove-from-reserve-btn');
-        removeFromReserveBtn.textContent = 'Remove from reserve';
+        removeFromReserveBtn.textContent = 'Remove';
 
         removeFromReserveBtn.addEventListener('click', function () {
             removeFromReserve(pokemon);
@@ -195,54 +248,23 @@ function createReservPokemons(listId, pokemonList) {
     });
 }
 
+// Funktion för att ta bort Pokémon från laget
+function removeFromReserve(pokemon) {
+    const index = reservPokemons.indexOf(pokemon);
+    if (index !== -1) {
+        reservPokemons.splice(index, 1);
+        updateLists();
+    }
+}
  /*_______________________________________________________________*/
 
-function updateLists() {
-    const valdaPokemonsList = document.getElementById('valdaPokemonsList');
-    const reservPokemonsList = document.getElementById('reservPokemonsList');
 
-    // Återställ listorna
-    valdaPokemonsList.innerHTML = '';
-    reservPokemonsList.innerHTML = '';
-
-
-    createValdaPokemons('valdaPokemonsList', valdaPokemons);
-
-
-   createValdaPokemons('reservPokemonsList', reservPokemons);
-}
-
-
-/*_______________________________________________________________*/
 
   
-/*_______________________________________________________________*/
 
-// Funktion för att skapa och visa en modal när sökfältet är tomt
-function createEmptySearchModal() {
-    const modalContainer = document.createElement('div');
-    modalContainer.classList.add('modal-container');
-    
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
 
-    const message = document.createElement('p');
-    message.textContent = 'Please enter a search term.';
 
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
-    closeButton.addEventListener('click', () => {
-        document.body.removeChild(modalContainer);
-    });
 
-    modal.appendChild(message);
-    modal.appendChild(closeButton);
-
-    modalContainer.appendChild(modal);
-    
-    document.body.appendChild(modalContainer);
-}
-
-export { createSearchPokemonCard, createEmptySearchModal };
+export { createSearchPokemonCard };
 //ändra ordning på reserver och knappar till dessa.
 
