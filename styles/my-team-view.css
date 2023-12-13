@@ -1,19 +1,104 @@
 .my-team-view {
     display: grid;
     grid-template-columns: 1fr;
+    text-align: center;
     gap: 1rem;
-    padding: 20px;
+    padding: 10px;
     margin: 0 auto;
     height: 100vh;
     width: 90%;
 }
 
 
+.selected-team{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: #fff solid 2px;
+    border-radius: 1em;
+    padding: 0.5rem;
+    height: 73%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.container-selected-reserve {
+    border: #fff solid 2px; 
+    border-radius: 1em;
+    padding: 1em;
+    height: 50%;
+    margin-top: 1rem;
+}
+
+.selected-reserve {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    border: #fff solid 2px; 
+    border-radius: 1em;
+    padding: 1em;
+    height: 90%;
+    margin-top: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
 
 
 
+.selected-team-member {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    height: 250px;
+}
+
+.selected-team-member-img img {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selected-team-member-infoDiv{
+    text-align: center;
+    margin-top: 10px;
+}
 
 
+/* Mediaförfrågan för mindre skärmar */
+@media screen and (max-width: 768px) {
+    .container-selected-team {
+        height: 100%; 
+    }
+}
+
+
+/*
+            <section class="selected-team-members">
+                <h2 class="text">Selected Team Members</h2>
+                <!-- team uppställning -->
+                <div class="team">
+                    <ul id="selectedTeamMembersList">
+                        <!-- Lista med valda  -->
+                    </ul>
+                </div>
+        
+                <h2 class="text">Reserved Team Members</h2>
+                <!-- reserv uppställning -->
+                <div class="reserve">
+                    <ul id="reservedTeamMembersList">
+                         <!-- Lista med reserver -->
+                    </ul>
+                </div>
+            </section>
+*/
 
 
 
