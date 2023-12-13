@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+       <!-- css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/start-view.css">
+    <link rel="stylesheet" href="styles/start-view-right.css">
+    <link rel="stylesheet" href="styles/start-view-left.css">
     <link rel="stylesheet" href="styles/my-team-view.css">
+    <link rel="stylesheet" href="styles/media-query.css">
+    <link rel="stylesheet" href="styles/modal.css">
+   <!-- js -->
     <script type="module" src="src/script.js"></script>
     <script type="module" src="src/pokemon-api.js"></script>
     <script type="module" src="src/dom.js"></script>
@@ -25,9 +29,12 @@
             <button class="nav-btn" id="my-teamBtn">My team</button>       
         </nav>
     </header>
-
+   <!-- main conatiner -->
     <main class="main-container">
+
+<!-- start view (denna sida völjs och vissas med "hidden") -->
         <section class="start-view">
+            <!-- höger sida -->
             <section class="find-champs-section">
                 <div id="find-champs" class="search-container">
                     <label for="searchInput">Find Pokémon:</label>
@@ -36,47 +43,53 @@
                         <button id="searchBtn" class="search-button">Search</button>
                     </div>
                 </div>
-                
-                </div>
-                <div class="search-results">
-                    
+                <div class="search-results">    
+                    <!-- inehåll av sökresultat -->
                 </div>
             </section>
-
+               <!-- valda pokemons förhandsvising vänster sida-->
             <section class="selected-pokemons">
                 <h2 class="text">Selected Pokémons</h2>
                 <div class="team">
                     <ul id="valdaPokemonsList">
-                    
+                       <!-- valada pokemons  -->
                     </ul>
                 </div>
                 
                 <h2 class="text">Reserv Pokémons</h2>
                 <div class="reserv">
-                    <ul id="reservPokemonsList"></ul>
+                    <ul id="reservPokemonsList">
+                        <!-- reserv pokemons -->
+                    </ul>
                 </div>
             </section>
         </section>
+<!-- slut på start view -->
+
+
+<!-- my team view (denna sida völjs och vissas med "hidden") -->
         <section class="my-team-view">
-        
+            <!-- conatiner för valda temet-->
             <section class="selected-team-members">
                 <h2 class="text">Selected Team Members</h2>
+                <!-- team uppställning -->
                 <div class="team">
                     <ul id="selectedTeamMembersList">
-                        <!-- Lista med valda medlemmar här -->
+                        <!-- Lista med valda  -->
                     </ul>
                 </div>
         
                 <h2 class="text">Reserved Team Members</h2>
+                <!-- reserv uppställning -->
                 <div class="reserve">
-                    <ul id="reservedTeamMembersList"></ul>
+                    <ul id="reservedTeamMembersList">
+                         <!-- Lista med reserver -->
+                    </ul>
                 </div>
             </section>
         </section>
-        
-    
+ <!-- slut på my team view -->
+
     </main>
-
 </body>
-
 </html>

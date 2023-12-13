@@ -1,0 +1,87 @@
+/* Media Query for smaller screens */
+@media (max-width: 766px) {
+    .search-results {
+        height: 78%;
+    }
+    .find-champs-section {
+        height: 60vh;
+    }
+
+    .selected-champion {
+        padding: 5px;
+    }
+
+    .selected-champion .image {
+        width: 80px;
+        height: 80px;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .search-champion {
+        padding: 5px;
+    }
+
+    .start-view {
+        padding: 10px;
+    }
+
+    .selected-pokemons {
+        padding: 0.5rem;
+    }
+}
+
+/* Media query för att anpassa för större skärmar */
+@media (min-width: 768px) {
+    .start-view {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .selected-champion {
+        padding: 5px;
+    }
+
+    .selected-champion .image {
+        width: 80px;
+        height: 80px;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .search-champion {
+        padding: 5px;
+    }
+
+    .start-view {
+        padding: 10px;
+    }
+    
+    .selected-pokemons {
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .selected-champion {
+        height: auto;
+        align-items: center;
+    }
+
+    .selected-champion img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .selected-champion .real-name,
+    .selected-champion .nickname {
+        font-size: 1rem;
+    }
+
+    .selected-champion button {
+        margin: 2px 0;
+    }
+}

@@ -42,15 +42,14 @@ header h1 {
      margin: 0;
 }
 
-
-
-
 h2 {
     font-size: 1.2rem;
     margin: 10px 0;
     color: #333;
 }
 
+/*____________________________________*/
+/*meny*/
 nav {
     display: flex;
     justify-content: center;
@@ -75,6 +74,8 @@ nav {
     cursor: pointer;
 }
 
+/*____________________________________*/
+/*main*/
 .main-container {
     display: flex;
     height: 90%;
@@ -84,72 +85,26 @@ nav {
   .start-view {
     flex: 1;
   }
-/*____________________________________*/
-/*ta bort när jag är klara med designen*/
 
 
-.find-champs-section {
-    border: #fff solid 2px;  
-}
-
-.selected-pokemons {
-    border: #fff solid 2px; 
-}
-
-
-/*____________________________________*/
-
-
-
-/* Media query för att anpassa för större skärmar */
-@media (min-width: 768px) {
-    .start-view {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .selected-champion {
-        padding: 5px;
-    }
-
-    .selected-champion .image {
-        width: 80px;
-        height: 80px;
-    }
-
-    h2 {
-        font-size: 1rem;
-    }
-
-   
-
-    .search-champion {
-        padding: 5px;
-    }
-
-    
-    .start-view{
-        padding: 10px;
-        
-    
-    }
-    
-}
 
 /*______________________*/
+/*hidden class för att dölja element*/
 .hidden{
     visibility: hidden;
     position: absolute;
     width: 0;
     height: 0;
 }
-
-
 /*______________________*/
 
+
+
+
+
+
+/*____________________________________*/
+/*ta bort när jag är klara med designen*/
 /*färger*/
 /*
 #ecb223	= gul
@@ -166,3 +121,13 @@ nav {
 #b3a125 = brun
 
 */
+
+.find-champs-section {
+    border: #fff solid 2px;  
+}
+
+.selected-pokemons {
+    border: #fff solid 2px; 
+}
+/*____________________________________*/
+

@@ -1,0 +1,126 @@
+.start-view{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 20px;
+    margin: 0 auto;
+    height: auto;
+}
+
+
+
+/*__________________________________________*/
+/* hitta pokemon / sökfällt höger sida */
+
+.find-champs-section {
+    padding: 1em;
+    background-color:   #acaaaa62;
+    border-radius: 1rem;
+    height: 100vh;
+}
+
+.search-champion{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 9rem;  
+}
+.search-champion img {
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    
+    
+}
+.infoDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: flex-start;
+   
+    flex: 1;
+}
+.search-champion h2 {
+    font-size: 1.2em;
+}
+
+/*btn lägg till pokemon i team*/
+.add-to-team-btn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    background-color: #109397;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-team-btn:hover {
+    transform: scale(1.2);
+}
+
+
+/*_____________________*/
+/* sökfält */
+.search-container {
+    padding: 15px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px 0px 0px 20px;
+    margin-right: 3px;
+}
+
+
+.search-button {
+    padding: 11px;
+    background-color: #109397;
+    color: #fff;
+    border: none;
+    border-radius: 0px 20px 20px 0px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0f7d81;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 1rem;
+    border: #fff solid 2px;  
+    height: 80%;
+    border-radius: 1em;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    max-height: 700px;
+}
+
+
+
+
+
