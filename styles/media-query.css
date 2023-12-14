@@ -1,12 +1,7 @@
 /* Media Query for smaller screens */
 @media (max-width: 766px) {
-    .search-results {
-        height: 78%;
-    }
-    .find-champs-section {
-        height: 60vh;
-    }
-
+    
+    
     .selected-champion {
         padding: 5px;
     }

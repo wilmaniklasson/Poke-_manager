@@ -5,22 +5,29 @@
     gap: 1rem;
     padding: 10px;
     margin: 0 auto;
-    height: 100vh;
+    height: 100%;
     width: 90%;
 }
 
+#selectedTeamMembersList,
+#reservedTeamMembersList {
+    list-style: none; 
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
 
 .selected-team{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     border: #fff solid 2px;
     border-radius: 1em;
     padding: 0.5rem;
-    height: 73%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    width: 100%;
 }
 
 
@@ -28,7 +35,7 @@
     border: #fff solid 2px; 
     border-radius: 1em;
     padding: 1em;
-    height: 50%;
+    height: 55%;
     margin-top: 1rem;
 }
 

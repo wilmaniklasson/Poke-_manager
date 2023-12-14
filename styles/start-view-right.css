@@ -91,7 +91,7 @@ ul {
 
 .reserv {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     border: #fff solid 2px; 
