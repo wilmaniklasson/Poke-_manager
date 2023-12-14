@@ -108,6 +108,7 @@ function createValdaPokemons(listId, pokemonList) {
             if (newNickname) {
                 setNickname(pokemon, newNickname);
                 nicknameHeader.textContent = `Nickname: ${newNickname}`;
+                
             }
         });
 
@@ -159,6 +160,7 @@ function createValdaPokemons(listId, pokemonList) {
 // Funktion för att ge Pokémon ett smeknamn
 function setNickname(pokemon, newNickname) {
     pokemon.nickname = newNickname;
+    updateLists();
 }
 
 // Funktion för att ta bort Pokémon från laget
@@ -263,7 +265,6 @@ function removeFromReserve(pokemon) {
 }
  /*_______________________________________________________________*/
 
-
  function createSelectedTeamMembers(listId, pokemonList) {
     const list = document.getElementById(listId);
 
@@ -273,25 +274,32 @@ function removeFromReserve(pokemon) {
 
         const imageDiv = document.createElement('div');
         imageDiv.classList.add('selected-team-member-img');
-        //om det finns bild på pokemonen skapas elementet
+        // om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
         }
-        
 
         const infoDiv = document.createElement('div');
         infoDiv.classList.add('selected-team-member-infoDiv');
+
         const nameHeader = document.createElement('h2');
         nameHeader.textContent = pokemon.name;
-        const abilitiesHeader = document.createElement('ul');
 
+        const abilitiesHeader = document.createElement('ul');
         pokemon.abilities.forEach(ability => {
             const abilityItem = document.createElement('li');
             abilityItem.textContent = ability;
             abilitiesHeader.appendChild(abilityItem);
         });
+
+        // Lägg till detta block för att visa smeknamnet om det finns
+        if (pokemon.nickname) {
+            const nicknameHeader = document.createElement('p');
+            nicknameHeader.textContent = `Nickname: ${pokemon.nickname}`;
+            infoDiv.appendChild(nicknameHeader);
+        }
 
         infoDiv.appendChild(nameHeader);
         infoDiv.appendChild(abilitiesHeader);
@@ -301,6 +309,8 @@ function removeFromReserve(pokemon) {
         list.appendChild(listItem);
     });
 }
+
+
 
 /*_______________________________________________________________*/
 function createReservedTeamMembers(listId, pokemonList) {
@@ -338,5 +348,6 @@ function createReservedTeamMembers(listId, pokemonList) {
 
 
 export { createSearchPokemonCard };
+export { valdaPokemons };
 //ändra ordning på reserver och knappar till dessa.
 

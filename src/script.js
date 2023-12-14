@@ -1,3 +1,5 @@
+import { valdaPokemons } from './dom.js';
+import { createPokemonModal } from './modal.js';
 
 const myTeamView = document.querySelector(".my-team-view");
 window.onload = function () {
@@ -12,6 +14,19 @@ findChampsBtn.addEventListener("click", () => {
 });
 const myTeamBt = document.querySelector("#my-teamBtn")
 myTeamBt.addEventListener("click", () => {
-    startView.classList.add('hidden');
-    myTeamView.classList.remove('hidden');
+    if (isValdaPokemonsOk()) {
+        startView.classList.add('hidden');
+        myTeamView.classList.remove('hidden');
+    }
+    else {
+        createPokemonModal();
+    }
 });
+
+function isValdaPokemonsOk() {
+    if (valdaPokemons.length === 3) {
+        return true;
+    }
+    return false;
+}
+
