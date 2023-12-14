@@ -3,7 +3,7 @@ import { createSearchPokemonCard } from './dom.js';
 import { createEmptySearchModal } from './modal.js';
 
 
-const pokemonApiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0';
+const pokemonApiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
 //klickhändelse som hanterar sökningen
 const searchButton = document.querySelector('#searchBtn');
@@ -98,7 +98,7 @@ async function getPokemonDetails(pokemonName) {
     // skapar objekt med de detaljer som behövs
     const pokemonDetails = {
       name: data.name,
-      image: data.sprites.front_default,
+      image: data.sprites.other.dream_world.front_default,
       abilities: data.abilities.map(ability => ability.ability.name),
     };
 
