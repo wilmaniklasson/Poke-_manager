@@ -30,7 +30,6 @@
 .selected-champion img {
     max-width: 40%;
     margin-bottom: 0;
-    margin-top: 1rem;
 }
 
 .selected-champion .real-name {
@@ -84,7 +83,7 @@ ul {
     align-items: center;
     padding: 0;
     border: #fff solid 2px;
-    height: 80%;
+    height: 100%;
     border-radius: 1em;
     overflow-y: auto;
     overflow-x: auto;
@@ -102,12 +101,17 @@ ul {
     overflow-y: auto;
     overflow-x: auto;
 }
+
+.input-container {
+    align-items: center;
+  }
+
 .nickname-input{
     flex: 1;
     padding: 5px;
     border: 2px solid #ddd;
     border-radius: 5px;
-    margin-right: 3px;
+    margin-bottom: 0;
 }
 
 .set-nickname-btn,
@@ -136,10 +140,12 @@ ul {
 
 .set-nickname-btn {
     background-color: #109771;
+    margin-bottom: 0;
 }
 
 .remove-from-team-btn {
     background-color: #e17070;
+    margin-bottom: 1rem;
 }
 
 .move-to-reserve-btn{
@@ -160,17 +166,18 @@ ul {
 
 
 .reserv-champion{
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    height: 7rem;  
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    height: 200px; 
 }
 .reserv-champion img {
-    width: 100px; 
-    height: 100px; 
+    width: 40%; 
     position: relative;
     
     

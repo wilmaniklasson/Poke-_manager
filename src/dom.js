@@ -90,11 +90,13 @@ function createValdaPokemons(listId, pokemonList) {
         }
 
         const realNameHeader = document.createElement('h2');
-        realNameHeader.classList.add('real-name');
         realNameHeader.textContent = pokemon.name;
 
         const nicknameHeader = document.createElement('h2');
         nicknameHeader.classList.add('nickname');
+
+        const inputContainer = document.createElement('div');
+        inputContainer.classList.add('input-container');
 
         const nicknameInput = document.createElement('input');
         nicknameInput.classList.add('nickname-input');
@@ -103,7 +105,7 @@ function createValdaPokemons(listId, pokemonList) {
 
         const setNicknameBtn = document.createElement('button');
         setNicknameBtn.classList.add('set-nickname-btn');
-        setNicknameBtn.textContent = 'Set Nickname';
+        setNicknameBtn.textContent = 'Save';
 
         setNicknameBtn.addEventListener('click', function () {
             const newNickname = nicknameInput.value;
@@ -144,8 +146,9 @@ function createValdaPokemons(listId, pokemonList) {
 
         infoDiv.appendChild(realNameHeader);
         infoDiv.appendChild(nicknameHeader);
-        infoDiv.appendChild(nicknameInput);
-        infoDiv.appendChild(setNicknameBtn);
+        inputContainer.appendChild(nicknameInput);
+        inputContainer.appendChild(setNicknameBtn);
+        infoDiv.appendChild(inputContainer);
         infoDiv.appendChild(moveBtn);
         infoDiv.appendChild(moveToReserveBtn);
         infoDiv.appendChild(removeFromTeamBtn);
