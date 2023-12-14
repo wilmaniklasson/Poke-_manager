@@ -101,7 +101,7 @@ function createValdaPokemons(listId, pokemonList) {
         const nicknameInput = document.createElement('input');
         nicknameInput.classList.add('nickname-input');
         nicknameInput.type = 'text';
-        nicknameInput.placeholder = 'Nickname';
+        nicknameInput.placeholder = 'Pokémon Nickname:';
 
         const setNicknameBtn = document.createElement('button');
         setNicknameBtn.classList.add('set-nickname-btn');
