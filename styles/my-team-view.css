@@ -23,30 +23,29 @@
 
 .selected-team{
     display: flex;
+    justify-content: center;
     align-items: center;
     border: #fff solid 2px;
     border-radius: 1em;
     padding: 0.5rem;
-    width: 100%;
 }
 
 
 .container-selected-reserve {
-    border: #fff solid 2px; 
     border-radius: 1em;
-    padding: 1em;
+    padding: 0;
     height: 55%;
     margin-top: 1rem;
 }
 
 .selected-reserve {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     border: #fff solid 2px; 
     border-radius: 1em;
-    padding: 1em;
+    padding: 0.5rem;
     height: 90%;
     margin-top: 1rem;
     overflow-y: auto;
@@ -82,7 +81,7 @@
 /* Mediaförfrågan för mindre skärmar */
 @media screen and (max-width: 768px) {
     .container-selected-team {
-        height: 100%; 
+       
     }
 }
 

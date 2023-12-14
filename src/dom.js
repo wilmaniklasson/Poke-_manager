@@ -169,8 +169,20 @@ function removeFromTeam(pokemon) {
     if (index !== -1) {
         valdaPokemons.splice(index, 1);
         updateLists();
+        addFromReserveToSelected();
     }
 }
+
+/*Funktion för att lägga till Pokemon från reservlistan till valdaPokemons
+om valdaPokemons är mindre en tre */
+function addFromReserveToSelected() {
+    if (valdaPokemons.length < 3 && reservPokemons.length > 0) {
+        const pokemonToAdd = reservPokemons.shift(); 
+        valdaPokemons.push(pokemonToAdd); 
+        updateLists();
+    }
+}
+
 
 // Funktion för att flytta Pokémon i laget
 function move(pokemon) {
@@ -190,7 +202,7 @@ function moveToReserve(pokemon) {
     const index = valdaPokemons.indexOf(pokemon);
     if (index !== -1) {
         valdaPokemons.splice(index, 1);
-        reservPokemons.push(pokemon);
+        reservPokemons.unshift(pokemon);
         updateLists();
     }
 }
@@ -213,6 +225,8 @@ function updateLists() {
     createSelectedTeamMembers('selectedTeamMembersList', valdaPokemons);
     createReservedTeamMembers('reservedTeamMembersList', reservPokemons);
 }
+
+
 
 /*_______________________________________________________________*/
 //funktion för att skapa element för reservPokemons = [];
@@ -294,7 +308,7 @@ function removeFromReserve(pokemon) {
             abilitiesHeader.appendChild(abilityItem);
         });
 
-        // Lägg till detta block för att visa smeknamnet om det finns
+       
         if (pokemon.nickname) {
             const nicknameHeader = document.createElement('p');
             nicknameHeader.textContent = `Nickname: ${pokemon.nickname}`;
@@ -318,29 +332,41 @@ function createReservedTeamMembers(listId, pokemonList) {
 
     pokemonList.forEach(pokemon => {
         const listItem = document.createElement('li');
-        listItem.classList.add('reserv-champion');
+        listItem.classList.add('selected-team-member');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('reserv-champion-img');
+        imageDiv.classList.add('selected-team-memberimg');
         //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
         }
-
         const infoDiv = document.createElement('div');
-        infoDiv.classList.add('infoDiv');
+        infoDiv.classList.add('selected-team-member-infoDiv');
+        
         const nameHeader = document.createElement('h2');
         nameHeader.textContent = pokemon.name;
-
+        
+        const abilitiesHeader = document.createElement('ul');
+        pokemon.abilities.forEach(ability => {
+            const abilityItem = document.createElement('li');
+            abilityItem.textContent = ability;
+            abilitiesHeader.appendChild(abilityItem);
+        });
+        
+        
+        
         infoDiv.appendChild(nameHeader);
+        infoDiv.appendChild(abilitiesHeader);
         listItem.appendChild(imageDiv);
         listItem.appendChild(infoDiv);
-
+        
         list.appendChild(listItem);
     });
 }
+
+
 /*_______________________________________________________________*/
   
 
