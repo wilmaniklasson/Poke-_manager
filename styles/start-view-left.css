@@ -27,20 +27,21 @@
     background-color: #fff;
     border-radius: 5px;
     height: 9rem;  
+    width: 20rem;
 }
 .search-champion img {
     width: 100px; 
     height: 100px; 
     position: relative;
+    margin-left: 2rem;
     
     
 }
 .infoDiv{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    align-items: flex-start;
-   
+    align-items: flex-end;
+    margin-right: 1rem;
     flex: 1;
 }
 .search-champion h2 {

@@ -68,12 +68,14 @@ async function handleSearch() {
 
     // Om matchande Pokémon finns, hämta deras detaljer och skapa dom element
     if (matchingPokemon.length > 0) {
-        try {
-            // väntar in alla pokemonDetails för att samtidigt lägga till dessa i arrayen
-            pokemonDetailsArray = await Promise.all(
-                matchingPokemon.map(pokemonName => getPokemonDetails(pokemonName))
-            );
-
+      try {
+          // Begränsa till de första 25 matchande Pokémon
+          const limitedMatchingPokemon = matchingPokemon.slice(0, 25);
+  
+          // Väntar in alla pokemonDetails för att samtidigt lägga till dessa i arrayen
+          pokemonDetailsArray = await Promise.all(
+              limitedMatchingPokemon.map(pokemonName => getPokemonDetails(pokemonName))
+          );
             // anroppar funktionen som skapar dom elementen
             createSearchPokemonCard(pokemonDetailsArray);
         } catch (error) {
@@ -98,7 +100,7 @@ async function getPokemonDetails(pokemonName) {
     // skapar objekt med de detaljer som behövs
     const pokemonDetails = {
       name: data.name,
-      image: data.sprites.front_default,
+      image: data.sprites.other.dream_world.front_default ? data.sprites.other.dream_world.front_default : data.sprites.front_default,
       abilities: data.abilities.map(ability => ability.ability.name),
     };
 
