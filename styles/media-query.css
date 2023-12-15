@@ -34,7 +34,18 @@
     .selected-pokemons {
         padding: 0.5rem;
     }
-    
+    .find-champs-section {
+        height: 60vh;
+    }
+    .search-results{
+        height: 50vh;
+    }
+    .team{
+        height: 38vh;
+    }
+    .reserv{
+        height: 50vh;
+    }
 }
 
 /* Media query för att anpassa för större skärmar */
@@ -86,3 +97,19 @@
         margin: 2px 0;
     }
 }
+
+@media screen and (min-height: 667px) {
+    .find-champs-section {
+        height: 60vh;
+    }
+    .search-results{
+        height: 48vh;
+    }
+    .team{
+        height: 48vh;
+    }
+    .reserv{
+        height: 33vh;
+    }
+    
+  }

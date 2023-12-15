@@ -25,7 +25,7 @@ function createSearchPokemonCard(pokemonDetailsArray) {
         }
 
         const infoDiv = document.createElement('div');
-        infoDiv.classList.add('infoDiv');
+        infoDiv.classList.add('search-infoDiv');
         const nameHeader = document.createElement('h2');
         nameHeader.textContent = pokemon.name;
 
