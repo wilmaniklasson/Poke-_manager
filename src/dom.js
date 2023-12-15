@@ -34,8 +34,8 @@ function createSearchPokemonCard(pokemonDetailsArray) {
         addToTeamBtn.textContent = 'Add to team';
 
         addToTeamBtn.addEventListener('click', function() {
-            // Lägg till den aktuella pokemonen i listan eller reservlistan
-            addToTeam(pokemon);
+            // Lägg till en kopia av den aktuella pokemonen i listan eller reservlistan
+            addToTeam(JSON.parse(JSON.stringify(pokemon)));
 
             // Uppdatera listorna efter att ha lagt till i team
             updateLists();
