@@ -23,12 +23,15 @@
 
 .selected-team{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; 
     align-items: center;
-    border: #fff solid 2px;
-    background-color:   #acaaaa62;
+    padding: 0;
+    border-top: #fff solid 2px;
+    border-bottom: #fff solid 2px;
+    background-color: #fdf7dc;
+    height: 23.5rem;
     border-radius: 1em;
-    padding: 0.5rem;
 }
 
 
@@ -42,18 +45,25 @@
 .selected-reserve {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-start; 
     align-items: center;
-    background-color:   #acaaaa62;
-    border: #fff solid 2px; 
+    padding: 0;
+    border-top: #fff solid 2px;
+    border-bottom: #fff solid 2px;
+    background-color: #fdf7dc;
+    height: 23.5rem;
     border-radius: 1em;
-    padding: 0.5rem;
-    height: 90%;
-    margin-top: 1rem;
-    overflow-y: auto;
-    overflow-x: hidden; 
+    
 }
 
+#reservedTeamMembersList{
+    overflow-y: auto;
+    height: 100%;
+}
+#selectedTeamMembersList{
+    overflow-y: auto;
+    height: 100%;
+}
 
 
 .selected-team-member {
@@ -80,6 +90,13 @@
 }
 
 
+
+.text2{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
 
 

@@ -54,11 +54,7 @@
     cursor: pointer;
 }
 
-.selected-champion button:hover {
-    transform: scale(1.1);
-    background-color: #107799;
-    color: #fff;
-}
+
 
 ul {
     list-style: none;
@@ -69,10 +65,6 @@ ul {
 
 /*____________________________*/
 /* conatiner till valda / reserv pokemons*/
-.text{
-    font-size: 1.2rem;
-    font-weight: bold;
-}
 
 
 
@@ -106,13 +98,13 @@ ul {
 #valdaPokemonsList{
     overflow-y: auto;
     height: 100%;
-    background-color: #fdf7dc;
+    
 }
 
 #reservPokemonsList{
     overflow-y: auto;
     height: 100%;
-    background-color: #fdf7dc;
+    
 }
 
 .input-container {
@@ -134,7 +126,6 @@ ul {
     padding: 5px 10px;
     font-size: 0.85rem;
     margin-bottom: 3px;
-    background-color: #109397;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -149,7 +140,14 @@ ul {
     transform: scale(1.1);
 }
 
+.selected-champion button:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
 
+.movebtn{
+    background-color: #109397;
+}
 
 .set-nickname-btn {
     background-color: #109771;
@@ -202,7 +200,7 @@ ul {
 
 .remove-from-reserve-btn {
     padding: 5px 10px;
-    font-size: 0.70rem;
+    font-size: 0.85rem;
     margin-bottom: 3px;
     color: #fff;
     border: none;
@@ -213,6 +211,11 @@ ul {
     
 }
 
-.remove-from-reserve-btn {
+.remove-from-reserve-btn:hover {
     transform: scale(1.1);
+}
+
+.text1{
+    font-size: 1.2rem;
+    font-weight: bold;
 }
