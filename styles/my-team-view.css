@@ -26,6 +26,7 @@
     justify-content: center;
     align-items: center;
     border: #fff solid 2px;
+    background-color:   #acaaaa62;
     border-radius: 1em;
     padding: 0.5rem;
 }
@@ -43,6 +44,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color:   #acaaaa62;
     border: #fff solid 2px; 
     border-radius: 1em;
     padding: 0.5rem;
@@ -61,15 +63,15 @@
     padding: 10px;
     width: 250px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.509);
     background-color: #f8f8f8;
-    height: 250px;
+    height: 350px;
 }
 
 .selected-team-member-img img {
-    max-width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 40%;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .selected-team-member-infoDiv{
@@ -78,33 +80,6 @@
 }
 
 
-/* Mediaförfrågan för mindre skärmar */
-@media screen and (max-width: 768px) {
-    .container-selected-team {
-       
-    }
-}
-
-
-/*
-            <section class="selected-team-members">
-                <h2 class="text">Selected Team Members</h2>
-                <!-- team uppställning -->
-                <div class="team">
-                    <ul id="selectedTeamMembersList">
-                        <!-- Lista med valda  -->
-                    </ul>
-                </div>
-        
-                <h2 class="text">Reserved Team Members</h2>
-                <!-- reserv uppställning -->
-                <div class="reserve">
-                    <ul id="reservedTeamMembersList">
-                         <!-- Lista med reserver -->
-                    </ul>
-                </div>
-            </section>
-*/
 
 
 

@@ -4,12 +4,14 @@ function createSearchPokemonCard(pokemonDetailsArray) {
     // Töm innehållet i behållaren innan du lägger till nya element
     searchResults.innerHTML = '';
 
+
     // Skapa en ul-lista för att hålla Pokémon-korten
     const resultList = document.createElement('ul');
     resultList.classList.add('search-results-list');
 
     // Loopa igenom varje Pokemon i arrayen
     pokemonDetailsArray.forEach(pokemon => {
+        
         const searchChampion = document.createElement('li');
         searchChampion.classList.add('search-champion');
 
@@ -32,8 +34,8 @@ function createSearchPokemonCard(pokemonDetailsArray) {
         addToTeamBtn.textContent = 'Add to team';
 
         addToTeamBtn.addEventListener('click', function() {
-            // Lägg till den aktuella pokemonen i listan eller reservlistan
-            addToTeam(pokemon);
+            // Lägg till en kopia av den aktuella pokemonen i listan eller reservlistan
+            addToTeam(JSON.parse(JSON.stringify(pokemon)));
 
             // Uppdatera listorna efter att ha lagt till i team
             updateLists();
@@ -88,20 +90,22 @@ function createValdaPokemons(listId, pokemonList) {
         }
 
         const realNameHeader = document.createElement('h2');
-        realNameHeader.classList.add('real-name');
         realNameHeader.textContent = pokemon.name;
 
         const nicknameHeader = document.createElement('h2');
         nicknameHeader.classList.add('nickname');
 
+        const inputContainer = document.createElement('div');
+        inputContainer.classList.add('input-container');
+
         const nicknameInput = document.createElement('input');
         nicknameInput.classList.add('nickname-input');
         nicknameInput.type = 'text';
-        nicknameInput.placeholder = 'Enter Nickname';
+        nicknameInput.placeholder = 'Pokémon Nickname:';
 
         const setNicknameBtn = document.createElement('button');
         setNicknameBtn.classList.add('set-nickname-btn');
-        setNicknameBtn.textContent = 'Set Nickname';
+        setNicknameBtn.textContent = 'Save';
 
         setNicknameBtn.addEventListener('click', function () {
             const newNickname = nicknameInput.value;
@@ -142,8 +146,9 @@ function createValdaPokemons(listId, pokemonList) {
 
         infoDiv.appendChild(realNameHeader);
         infoDiv.appendChild(nicknameHeader);
-        infoDiv.appendChild(nicknameInput);
-        infoDiv.appendChild(setNicknameBtn);
+        inputContainer.appendChild(nicknameInput);
+        inputContainer.appendChild(setNicknameBtn);
+        infoDiv.appendChild(inputContainer);
         infoDiv.appendChild(moveBtn);
         infoDiv.appendChild(moveToReserveBtn);
         infoDiv.appendChild(removeFromTeamBtn);
@@ -288,6 +293,7 @@ function removeFromReserve(pokemon) {
 
         const imageDiv = document.createElement('div');
         imageDiv.classList.add('selected-team-member-img');
+        
         // om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
@@ -299,19 +305,24 @@ function removeFromReserve(pokemon) {
         infoDiv.classList.add('selected-team-member-infoDiv');
 
         const nameHeader = document.createElement('h2');
-        nameHeader.textContent = pokemon.name;
+        nameHeader.innerText = pokemon.name;
 
-        const abilitiesHeader = document.createElement('ul');
+        // Skapa en h3 för Abilities-header
+        const abilitiesHeader = document.createElement('h3');
+        abilitiesHeader.innerText = 'Abilities:';
+
+        const abilitiesList = document.createElement('ul');
         pokemon.abilities.forEach(ability => {
             const abilityItem = document.createElement('li');
-            abilityItem.textContent = ability;
-            abilitiesHeader.appendChild(abilityItem);
+            abilityItem.innerText = ability;
+            abilitiesList.appendChild(abilityItem);
         });
 
-       
+        abilitiesHeader.appendChild(abilitiesList);
+        
         if (pokemon.nickname) {
             const nicknameHeader = document.createElement('p');
-            nicknameHeader.textContent = `Nickname: ${pokemon.nickname}`;
+            nicknameHeader.innerText = `Nickname: ${pokemon.nickname}`;
             infoDiv.appendChild(nicknameHeader);
         }
 
@@ -335,7 +346,7 @@ function createReservedTeamMembers(listId, pokemonList) {
         listItem.classList.add('selected-team-member');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('selected-team-memberimg');
+        imageDiv.classList.add('selected-team-member-img');
         //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
@@ -346,6 +357,7 @@ function createReservedTeamMembers(listId, pokemonList) {
         infoDiv.classList.add('selected-team-member-infoDiv');
         
         const nameHeader = document.createElement('h2');
+        nameHeader.classList.add('real-name');
         nameHeader.textContent = pokemon.name;
         
         const abilitiesHeader = document.createElement('ul');

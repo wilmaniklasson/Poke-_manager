@@ -10,11 +10,19 @@
         width: 80px;
         height: 80px;
     }
-
-    h2 {
-        font-size: 1rem;
+    .search-champion{
+         
+        width: 15rem;
     }
 
+    .search-champion img {
+        width: 40%; 
+        height: 40%; 
+    }
+    
+    h2{
+        font-size: 1.2rem;
+    }
     .search-champion {
         padding: 5px;
     }
@@ -26,6 +34,7 @@
     .selected-pokemons {
         padding: 0.5rem;
     }
+    
 }
 
 /* Media query för att anpassa för större skärmar */
@@ -43,9 +52,7 @@
         height: 80px;
     }
 
-    h2 {
-        font-size: 1rem;
-    }
+    
 
     .search-champion {
         padding: 5px;
@@ -56,17 +63,18 @@
     .selected-pokemons {
         padding: 0.5rem;
     }
+
+    
 }
 
 @media screen and (max-width: 600px) {
     .selected-champion {
-        height: auto;
+        height: 300px;
         align-items: center;
     }
 
-    .selected-champion img {
-        margin-right: 0;
-        margin-bottom: 10px;
+    .selected-champion-img img {
+        width: 30%;
     }
 
     .selected-champion .real-name,
