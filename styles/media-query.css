@@ -101,18 +101,18 @@
 
 
 
-  @media screen and (min-height:   600px) {
+ 
+@media screen and (max-width: 368px) and (max-height: 700px) {
     .find-champs-section {
         height: 62vh;
     }
-    .search-results{
+    .search-results {
         height: 48vh;
     }
-    .team{
+    .team {
         height: 48vh;
     }
-    .reserv{
+    .reserv {
         height: 33vh;
     }
-
-  }
+}
