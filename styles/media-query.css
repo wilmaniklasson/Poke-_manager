@@ -13,9 +13,7 @@
         width: 15rem;
     }
 
-    .search-image {
-        width: 20%;
-    }
+    
     
     h2{
         font-size: 1.2rem;
@@ -43,14 +41,17 @@
     .reserv{
         height: 50vh;
     }
-}
-
-/* Media query för att anpassa för större skärmar */
-@media (min-width: 768px) {
-    .start-view {
-        grid-template-columns: 1fr 1fr;
+    .search-image {
+        width: 30%;
     }
-
+    .reserv-image {
+        width: 30%; 
+       
+    }
+   
+    .selected-image{
+        width: 30%;
+    }
     .selected-champion {
         padding: 5px;
     }
@@ -62,27 +63,6 @@
     .selected-pokemons {
         padding: 0.5rem;
     }
-
-    .reserv-image {
-        width: 20%; 
-       
-    }
-   
-    .selected-image{
-        width: 20%;
-    }
-} 
-
-@media screen and (max-width: 600px) {
-    .selected-champion {
-        height: 270px;
-        align-items: center;
-    }
-
-    .selected-champion-img img {
-        width: 20%;
-    }
-
     .selected-champion .real-name,
     .selected-champion .nickname {
         font-size: 1rem;
@@ -93,10 +73,20 @@
     }
 }
 
+/* Media query för att anpassa för större skärmar */
+@media (min-width: 768px) {
+    .start-view {
+        grid-template-columns: 1fr 1fr;
+    }
 
-
-
+    .selected-champion {
+        height: 270px;
+    }
  
+} 
+
+
+/* Media query för att anpassa för skärmars höjd skärmar */
 @media screen and (max-width: 368px) and (max-height: 700px) {
     .find-champs-section {
         height: 62vh;
