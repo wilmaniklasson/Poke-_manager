@@ -346,6 +346,7 @@ function createReservedTeamMembers(listId, pokemonList) {
         listItem.classList.add('selected-team-member');
 
         const imageDiv = document.createElement('div');
+        
         imageDiv.classList.add('selected-team-member-img');
         //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
