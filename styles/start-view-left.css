@@ -16,7 +16,8 @@
     padding: 0.5em;
     background-color:   #fef2b162;
     border-radius: 1rem;
-    height: 100vh;
+    height: 100%;
+    max-height: 54rem
 }
 
 .search-champion{
@@ -116,7 +117,7 @@ label {
     border-top: #fff solid 2px;
     border-bottom: #fff solid 2px;
     background-color: #fdf7dc;
-    height: 90%;
+    height: 68rem;
     border-radius: 1em;
 }
 
