@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
+
+
 @font-face {
     font-family: 'PokemonSolid';
     src: url('Pokemon Solid.ttf') format('truetype');
@@ -9,7 +11,10 @@
     font-style: normal;
 }
 
+
+
 *{
+    
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
@@ -45,7 +50,8 @@ header h1 {
 }
 
 h2 {
-    
+    font-family: 'PokemonSolid';
+    letter-spacing: 4px;
     margin: 5px;
     
 }

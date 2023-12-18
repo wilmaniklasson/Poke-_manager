@@ -230,7 +230,7 @@ function updateLists() {
     selectedTeamMembersList.innerHTML = '';
     reservedTeamMembersList.innerHTML = '';
     createSelectedTeamMembers('selectedTeamMembersList', valdaPokemons);
-    createReservedTeamMembers('reservedTeamMembersList', reservPokemons);
+    createSelectedTeamMembers('reservedTeamMembersList', reservPokemons);
 }
 
 
@@ -295,14 +295,14 @@ function removeFromReserve(pokemon) {
         listItem.classList.add('selected-team-member');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('selected-imageDiv');
+        imageDiv.classList.add('selected-team-imageDiv');
         
         // om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
-            image.classList.add('selected-image');
+            image.classList.add('selected-team-image');
         }
 
         const infoDiv = document.createElement('div');
@@ -340,49 +340,6 @@ function removeFromReserve(pokemon) {
 }
 
 
-
-/*_______________________________________________________________*/
-function createReservedTeamMembers(listId, pokemonList) {
-    const list = document.getElementById(listId);
-
-    pokemonList.forEach(pokemon => {
-        const listItem = document.createElement('li');
-        listItem.classList.add('selected-team-member');
-
-        const imageDiv = document.createElement('div');
-        
-        imageDiv.classList.add('reserv-imageDiv');
-        //om det finns bild på pokemonen skapas elementet
-        if (pokemon.image) {
-            const image = document.createElement('img');
-            image.src = pokemon.image;
-            imageDiv.appendChild(image);
-            image.classList.add('reserv-image');
-        }
-        const infoDiv = document.createElement('div');
-        infoDiv.classList.add('selected-team-member-infoDiv');
-        
-        const nameHeader = document.createElement('h2');
-        nameHeader.classList.add('real-name');
-        nameHeader.textContent = pokemon.name;
-        
-        const abilitiesHeader = document.createElement('ul');
-        pokemon.abilities.forEach(ability => {
-            const abilityItem = document.createElement('li');
-            abilityItem.textContent = ability;
-            abilitiesHeader.appendChild(abilityItem);
-        });
-        
-        
-        
-        infoDiv.appendChild(nameHeader);
-        infoDiv.appendChild(abilitiesHeader);
-        listItem.appendChild(imageDiv);
-        listItem.appendChild(infoDiv);
-        
-        list.appendChild(listItem);
-    });
-}
 
 
 /*_______________________________________________________________*/

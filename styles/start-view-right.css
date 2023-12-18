@@ -227,6 +227,12 @@ ul {
 }
 
 .text1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.text2{
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
 }

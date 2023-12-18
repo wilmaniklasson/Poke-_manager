@@ -51,6 +51,13 @@
     border-radius: 1em;
     
 }
+.selected-team-image{
+    width: 50%;
+}
+
+.selected-team-imageDiv {
+    box-shadow: 0 8px 8px -8px rgba(0, 0, 0, 0.288); 
+}
 
 
 .selected-team-member {
