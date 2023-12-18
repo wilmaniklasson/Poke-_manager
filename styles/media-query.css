@@ -4,6 +4,7 @@
     
     .selected-champion {
         padding: 5px;
+        height: 280px;
     }
 
    
@@ -38,7 +39,7 @@
         height: 50vh;
     }
     .team{
-        height: 38vh;
+        height: 40vh;
     }
     .reserv{
         height: 50vh;
