@@ -16,12 +16,13 @@ function createSearchPokemonCard(pokemonDetailsArray) {
         searchChampion.classList.add('search-champion');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('search-champion-img');
+        imageDiv.classList.add('search-imageDiv');
 
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
+            image.classList.add('search-image');
         }
 
         const infoDiv = document.createElement('div');
@@ -81,12 +82,13 @@ function createValdaPokemons(listId, pokemonList) {
         listItem.classList.add('selected-champion');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('selected-champion-img');
+        imageDiv.classList.add('selected-imageDiv');
         //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
+            image.classList.add('selected-image');
         }
 
         const realNameHeader = document.createElement('h2');
@@ -244,12 +246,13 @@ function createReservPokemons(listId, pokemonList) {
         listItem.classList.add('reserv-champion');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('reserv-champion-img');
+        imageDiv.classList.add('reserv-imageDiv');
         //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
+            image.classList.add('reserv-image');
         }
 
         const removeFromReserveBtn = document.createElement('button');
@@ -292,13 +295,14 @@ function removeFromReserve(pokemon) {
         listItem.classList.add('selected-team-member');
 
         const imageDiv = document.createElement('div');
-        imageDiv.classList.add('selected-team-member-img');
+        imageDiv.classList.add('selected-imageDiv');
         
         // om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
+            image.classList.add('selected-image');
         }
 
         const infoDiv = document.createElement('div');
@@ -347,12 +351,13 @@ function createReservedTeamMembers(listId, pokemonList) {
 
         const imageDiv = document.createElement('div');
         
-        imageDiv.classList.add('selected-team-member-img');
+        imageDiv.classList.add('reserv-imageDiv');
         //om det finns bild på pokemonen skapas elementet
         if (pokemon.image) {
             const image = document.createElement('img');
             image.src = pokemon.image;
             imageDiv.appendChild(image);
+            image.classList.add('reserv-image');
         }
         const infoDiv = document.createElement('div');
         infoDiv.classList.add('selected-team-member-infoDiv');

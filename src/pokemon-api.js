@@ -5,9 +5,17 @@ import { createEmptySearchModal } from './modal.js';
 
 const pokemonApiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0';
 
-//klickhändelse som hanterar sökningen
 const searchButton = document.querySelector('#searchBtn');
+const searchInput = document.querySelector('#searchInput');
+
 searchButton.addEventListener('click', handleSearch);
+searchInput.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+});
+
+
 
 // Funktion för att hämta och spara Pokémon-namn i local storage
 function fetchAndSavePokemonNames() {

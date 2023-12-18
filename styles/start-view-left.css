@@ -30,10 +30,12 @@
     background-color: #f8f8f8;
     height: 200px;
 }
-.search-champion img {
-    width: 30% ;
-    position: relative;   
+.search-image {
+    width: 30%;
+    position: relative;
+    margin-bottom: auto;
 }
+
 .search-infoDiv{
     display: flex;
     flex-direction: column;

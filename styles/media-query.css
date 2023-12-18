@@ -13,9 +13,8 @@
         width: 15rem;
     }
 
-    .search-champion img {
-        width: 20%; 
-       
+    .search-image {
+        width: 20%;
     }
     
     h2{
@@ -56,29 +55,22 @@
         padding: 5px;
     }
 
-
-    
-
     .search-champion {
         padding: 5px;
     }
 
-
-    
     .selected-pokemons {
         padding: 0.5rem;
     }
 
-    .reserv-champion img {
+    .reserv-image {
         width: 20%; 
-        position: relative;
+       
     }
    
-    .selected-champion img {
+    .selected-image{
         width: 20%;
     }
-
-    
 } 
 
 @media screen and (max-width: 600px) {
