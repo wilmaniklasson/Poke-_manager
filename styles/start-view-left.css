@@ -33,6 +33,7 @@
 }
 .search-image {
     width: 30%;
+    max-height: 100px;
     position: relative;
     margin-bottom: auto;
 }

@@ -40,7 +40,7 @@ function createPokemonModal() {
   
  
     const closeButton = document.createElement('button');
-    closeButton.textContent = 'Stäng';
+    closeButton.textContent = 'close';
     closeButton.addEventListener('click', () => {
       document.body.removeChild(modalContainer);
     });

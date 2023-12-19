@@ -29,6 +29,7 @@
 
 .selected-image {
     max-width: 24%;
+    max-height: 100px;
     margin-bottom: 0;
 }
 
@@ -228,6 +229,7 @@ ul {
 }
 .reserv-image{
     width: 30%; 
+    max-height: 100px;
     position: relative;
 }
 
