@@ -90,19 +90,31 @@
  
 } 
 
+@media screen and (min-width: 1024px) {
+    .search-results-list {
+        list-style: none; 
+        align-items: center;
+        justify-content: center; 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: auto;
+        height: 100%;
+    }
+}
 
-/* Media query för att anpassa för skärmars höjd skärmar */
-/*@media screen and (max-width: 368px) and (max-height: 700px) {
-    .find-champs-section {
-        height: 62%;
+
+
+
+@media screen and (min-width: 500px) and (max-width: 755px) {
+    .search-results-list {
+        list-style: none; 
+        align-items: center;
+        justify-content: center; 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: auto;
+        height: 100%;
     }
-    .search-results {
-        height: 48%;
-    }
-    .team {
-        height: 48%;
-    }
-    .reserv {
-        height: 33%;
-    }
-}*/
+}

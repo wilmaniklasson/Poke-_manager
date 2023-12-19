@@ -104,17 +104,17 @@ function createValdaPokemons(listId, pokemonList) {
         nicknameInput.classList.add('nickname-input');
         nicknameInput.type = 'text';
         nicknameInput.placeholder = 'Pokémon Nickname:';
+        nicknameInput.value = pokemon.nickname || '';
 
         const setNicknameBtn = document.createElement('button');
         setNicknameBtn.classList.add('set-nickname-btn');
         setNicknameBtn.textContent = 'Save';
-
+        
         setNicknameBtn.addEventListener('click', function () {
             const newNickname = nicknameInput.value;
             if (newNickname) {
                 setNickname(pokemon, newNickname);
                 nicknameHeader.textContent = `Nickname: ${newNickname}`;
-                
             }
         });
 
@@ -325,7 +325,7 @@ function removeFromReserve(pokemon) {
         abilitiesHeader.appendChild(abilitiesList);
         
         if (pokemon.nickname) {
-            const nicknameHeader = document.createElement('p');
+            const nicknameHeader = document.createElement('h3');
             nicknameHeader.innerText = `Nickname: ${pokemon.nickname}`;
             infoDiv.appendChild(nicknameHeader);
         }

@@ -94,18 +94,46 @@ ul {
     border-radius: 1em;
 }
 
-
-#valdaPokemonsList{
+/*____________________________*/
+/* css för scroll bar*/
+#valdaPokemonsList {
     overflow-y: auto;
     height: 100%;
-    
 }
+
+#valdaPokemonsList::-webkit-scrollbar {
+    width: 12px; 
+}
+
+#valdaPokemonsList::-webkit-scrollbar-thumb {
+    background-color: #f1d152; 
+    border-radius: 6px; 
+   
+}
+
+#valdaPokemonsList::-webkit-scrollbar-track {
+    background-color: #eee5b8;
+}
+
 
 #reservPokemonsList{
     overflow-y: auto;
     height: 100%;
     
 }
+#reservPokemonsList::-webkit-scrollbar {
+    width: 12px; 
+}
+
+#reservPokemonsList::-webkit-scrollbar-thumb {
+    background-color: #f1d152; 
+    border-radius: 6px; 
+}
+
+#reservPokemonsList::-webkit-scrollbar-track {
+    background-color: #eee5b8;
+}
+/*____________________________*/
 
 .input-container {
     align-items: center;
@@ -226,13 +254,3 @@ ul {
     transform: scale(1.1);
 }
 
-.text1{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-.text2{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
